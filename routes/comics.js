@@ -10,7 +10,7 @@ router.get("/comics", async (req, res) => {
   const response = await axios.get(
     `https://lereacteur-marvel-api.herokuapp.com/comics?apiKey=${process.env.MY_API_KEY}`
   );
-  return res.json(response.data);
+  res.json(response.data);
 });
 
 // ROUTE GET > list of comics for 1 character
@@ -18,7 +18,7 @@ router.get("/comics/:characterId", async (req, res) => {
   const response = await axios.get(
     `https://lereacteur-marvel-api.herokuapp.com/comics/${req.params.characterId}?apiKey=${process.env.MY_API_KEY}`
   );
-  return res.json(response.data);
+  res.json(response.data);
 });
 
 module.exports = router;
@@ -28,7 +28,7 @@ router.get("/comic/:comicId", async (req, res) => {
   const response = await axios.get(
     `https://lereacteur-marvel-api.herokuapp.com/comic/${req.params.comicId}?apiKey=${process.env.MY_API_KEY}`
   );
-  return res.json(response.data);
+  res.json(response.data);
 });
 
 module.exports = router;
