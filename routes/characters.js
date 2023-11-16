@@ -8,7 +8,7 @@ const axios = require("axios");
 // ROUTE GET > list of all characters
 router.get("/characters", async (req, res) => {
   try {
-    const { name, skip } = req.query.name;
+    const { name, skip } = req.query;
 
     const response = await axios.get(
       `https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${process.env.MY_API_KEY}&name=${name}&skip=${skip}`
